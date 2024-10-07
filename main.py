@@ -248,7 +248,7 @@ print(r"""{}
 | |\  | (_) | |_| |    >  <  | |_/ / (_) | |_ 
 \_| \_/\___/ \__\_|   /_/\_\ \____/ \___/ \__|
                                               
-        NotPx Auto Paint & Claim by aDarkDev - v2.0 {}""".format(Colors.BLUE, Colors.END))
+        NotPx Auto Paint & Claim by @bob_crypt {}""".format(Colors.BLUE, Colors.END))
 
 
 def painter(NotPxClient:NotPx,session_name:str):
