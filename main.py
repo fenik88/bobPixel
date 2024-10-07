@@ -12,6 +12,12 @@ import os
 report_bug_text = "If you have done all the steps correctly and you think this is a bug, report it to github.com/aDarkDev with response. response: {}"
 authenticate_error = "Please follow the steps correctly. Not authenticated."
 
+
+# если код не запускается вы либо не установили необходимые дополнения
+# из файла requirements.txt либо не скачали питон, либо же не добавили профиль
+# профили должны быть без 2фа, если двухфакторка есть, то у вас должен быть пароль
+
+
 async def GetWebAppData(client):
     notcoin = await client.get_entity("notpixel")
     msg = await client(functions.messages.RequestWebViewRequest(notcoin,notcoin,platform="android",url="https://notpx.app/"))
