@@ -21,7 +21,7 @@
    ```bash
    $ python3 -m pip install -r requirements.txt
    ```
-2. Добавьте свой API Hash and API ID в нужные поля в файле config.py, как получить api я писал в посте https://t.me/bob_crypt/640
+2. Добавьте свой API Hash и API ID в нужные поля в файле config.py, как получить api я писал в посте https://t.me/bob_crypt/640
 
 запустите код либо в среде разработки, либо через консоль, зайдя в папку со скриптом и введя инструкцию!
 ```bash
