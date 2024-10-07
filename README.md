@@ -1,20 +1,18 @@
 #  bobPixel
-Ботик для автоматизации NotPixel [NotPixel Bot](https://t.me/notpixel): 
+Ботик для автоматизации NotPixel [bobPixel](https://t.me/notpixel): 
 
-![d](https://github.com/aDarkDev/NotPixel/blob/3478a347a2783afbe5faff49672c4bead56d9907/shot.png)
+
 
 ## Features:
-* 🌵 Automatic Boosting ( New Update )
-* 👾 Multi-Session
-* 🔥 Multi-Thread 
-* ⭕️ Error handling 
-* ✍🏻 Draw with desired x,y
-* 💰 Claim Mining
-* 💰 Paint Pixel
-* 💸 Show user balance
-* 🤖 Anti detect
-* 🐍 easy to use as module
-
+* 🌵 Авто бусты ( New Update )
+* 👾 Много-Сессий
+* 🔥 Много-поточные 
+* ⭕️ Работа с ошибками  
+* ✍🏻 Координация рисования 
+* 💰 Клейм майнинга
+* 💰 Рисовка 
+* 💸 Баланс 
+* 🤖 Анти детект 
 
 
 ## Установка
