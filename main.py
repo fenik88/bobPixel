@@ -26,6 +26,7 @@ async def GetWebAppData(client):
     webappdata_global = webappdata_global.replace(user_data,unquote(user_data))
     return webappdata_global
 
+
 class NotPx:
     UpgradePaintReward = {
         2: {
