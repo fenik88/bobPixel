@@ -1,7 +1,6 @@
 #  bobPixel
 Ботик для автоматизации NotPixel [NotPixel Bot](https://t.me/notpixel): 
 
-a fully automatic tool for claiming and painting. With built-in anti-detection features, it works efficiently and discreetly to get the best results. Simplify your tasks with the NotPixel Bot!
 ![d](https://github.com/aDarkDev/NotPixel/blob/3478a347a2783afbe5faff49672c4bead56d9907/shot.png)
 
 ## Features:
