@@ -1,3 +1,5 @@
+from distutils.ccompiler import new_compiler
+
 from telethon.sync import TelegramClient, functions
 from urllib.parse import unquote
 import threading
@@ -5,6 +7,9 @@ import requests
 import urllib3
 import asyncio
 import random
+
+from wheel.macosx_libfile import swap32
+
 import config
 import time
 import os
@@ -127,7 +132,7 @@ class NotPx:
             'Sec-Fetch-Dest': 'empty',
             'Sec-Fetch-Mode': 'cors',
             'Sec-Fetch-Site': 'same-origin',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.00; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36',
         }
 
     def request(self, method, end_point, key_check, data=None):
@@ -179,14 +184,15 @@ class NotPx:
 
     def autoPaintPixel(self):
         # making pixel randomly
-        colors = [ "#FFFFFF" , "#000000" , "#00CC78" , "#BE0039" ]
-        random_pixel = (random.randint(100,990) * 1000) + random.randint(100,990)
-        data = {"pixelId":random_pixel,"newColor":random.choice(colors)}
+        colors = ["#FFFFFF", "#000000", "#00CC78", "#BE0039"]
+        random_pixel = (random.randint(100, 990) * 1000) + random.randint(100, 990)
+        data = {"pixelId": random_pixel, "newColor": random.choice(colors)}
 
-        return self.request("post","/repaint/start","balance",data)['balance']
-    
-    def paintPixel(self,x,y,hex_color):
-        pixelformated = (y * 1000) + x + 1
+        return self.request("post", "/repaint/start", "balance", data)['balance']
+
+    def paintPixel(self,hex_color):
+        #здесь вы вводите свой пиксель который будете красить
+        pixelformated = ('вместо строки пишите вторую координату' * 1000) + 'пишите первую координату' + 1
         data = {"pixelId":pixelformated,"newColor":hex_color}
 
         return self.request("post","/repaint/start","balance",data)['balance']
@@ -281,17 +287,24 @@ def painter(NotPxClient:NotPx,session_name:str):
                 print("[+] {}EnergyLimit Upgrade{} to level {} result: {}".format(Colors.CYAN,Colors.END,levels_energylimit,status))
                 user_balance -= NotPx.UpgradeEnergyLimit[levels_energylimit]['Price']
                 
-            if charges > 0:
+            if charges > 1:
                 for _ in range(charges):
-                    balance = NotPxClient.autoPaintPixel()
+                    balance = NotPxClient.paintPixel("#000000")
                     print("[+] {}{}{}: 1 {}Pixel painted{} successfully. User new balance: {}{}{}".format(
-                        Colors.CYAN,session_name,Colors.END,
-                        Colors.GREEN,Colors.END,
-                        Colors.GREEN,balance,Colors.END
+                        Colors.CYAN, session_name, Colors.END,
+                        Colors.GREEN, Colors.END,
+                        Colors.GREEN, balance, Colors.END
                     ))
-                    t = random.randint(1,6)
-                    print("[!] {}{} anti-detect{}: Sleeping for {}...".format(Colors.CYAN,session_name,Colors.END,t))
+
+                    t = random.randint(1, 6)
+                    balance = NotPxClient.paintPixel("#FFFFFF")
+                    print("[+] {}{}{}: 1 {}Pixel painted{} successfully. User new balance: {}{}{}".format(
+                        Colors.CYAN, session_name, Colors.END,
+                        Colors.GREEN, Colors.END,
+                        Colors.GREEN, balance, Colors.END
+                    ))
                     time.sleep(t)
+                    print("[!] {}{} anti-detect{}: Sleeping for {}...".format(Colors.CYAN, session_name, Colors.END, t))
             else:
                 print("[!] {}{}{}: {}No charge available{}. Sleeping for 10 minutes...".format(
                     Colors.CYAN,session_name,Colors.END,
