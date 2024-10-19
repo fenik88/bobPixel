@@ -14,7 +14,7 @@ import config
 import time
 import os
 
-report_bug_text = "If you have done all the steps correctly and you think this is a bug, report it to github.com/aDarkDev with response. response: {}"
+report_bug_text = " "
 authenticate_error = "Please follow the steps correctly. Not authenticated."
 
 
@@ -192,6 +192,7 @@ class NotPx:
 
     def paintPixel(self,hex_color):
         #здесь вы вводите свой пиксель который будете красить
+
         pixelformated = ('вместо строки пишите вторую координату' * 1000) + 'пишите первую координату' + 1
         data = {"pixelId":pixelformated,"newColor":hex_color}
 
